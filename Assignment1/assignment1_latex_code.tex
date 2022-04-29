@@ -1,0 +1,49 @@
+\documentclass[ twocoloumns, 20pts]{IEEEtran}
+\begin{document}
+\title{\huge{Assignment 1}}
+\author{\Large{Pradeep Mundlik}\\AI21BTECH11022}
+\maketitle
+
+\section*{\Large{Question 6(b).}\\ICSE 2019 paper}
+\Large{The first and last term of a Geometrical Progression (G.P.) are 3 and 96
+respectively. If the common ratio is 2, find:\\
+(i) ‘n’ the number of terms of the G.P.\\
+(ii) Sum of the n terms.}
+\section*{\Large{Answer-}}
+Let given GP is $ a, ar, ar^2, ar^3,...... $ \\ where a is first term and r is common ratio,\\
+we can right $i^{th}$ term of GP = $ar^{i-1}$\\
+If there are n terms then last term = $ar^{n-1}$\\
+\\\\Given : \\
+First term, $a = 3 $\\
+Last term, $l = 96$\\
+Common ratio, $r = 2$\\
+\\(i)- \\
+$$l = ar^{n-1}$$
+$$=> r^{n-1} = \frac{l}{a}$$
+$$=> \log(r^{n-1}) = \log\left(\frac{l}{a}\right)$$
+$$=> (n-1)\log(r) = \log\left(\frac{l}{a}\right)$$
+$$=> n-1 = \frac{\log\left(\frac{l}{a}\right)}{\log(r)}$$
+$$=> n = \left(\frac{\log\left(\frac{l}{a}\right)}{\log(r)}\right) + 1 $$
+$$=> n = \left(\log_r\left(\frac{l}{a}\right)\right) + 1 $$
+Now, putting values,\\
+we got, 
+$$=> n = \left(\log_2\left(\frac{96}{3}\right)\right) + 1 $$
+$$=> n = \log_2(32) + 1 $$
+$$=> n = 5 + 1 $$
+$$=> n = 6 $$
+\framebox{  Hence, total number of terms in given GP is 6.  }\\
+\\(ii)-\\
+Let s is sum of all n terms of GP.\\
+$$s = a + ar + ar^2 +.....+ ar^{n-1}$$\;
+$$s = \sum_{i=1}^{i=n} ar^{i-1}$$\\
+So, we have formula for is\;
+$$ s = \frac{a\left(r^n-1\right)}{\left(r-1\right)}$$\\
+Now, putting values,\\
+we got,
+$$s = \frac{3\left(2^6-1\right)}{\left(2-1\right)}$$\;
+$$s = 3*(64-1)$$
+$$s = 3*63$$
+$$s = 189$$
+\framebox{  Hence, sum of all numbers in GP is 189.  }
+
+\end{document}
