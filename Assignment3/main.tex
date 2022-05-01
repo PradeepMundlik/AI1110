@@ -166,19 +166,20 @@ columns=fullflexible
         \label{table:table1}
     \end{table}
 \section{Answer-}
-    See below table,
-    \begin{table}[!htb]
-        \input{Tables/output_table.tex}
-        \label{table:table2}
-    \end{table}
-Here, \\
-$x_i$ = salary,\\
-$f_i$ = frequency accosiated with $x_i$ salary i.e number of workers with salary $x_i$,\\
-So, the mean $\bar{x}$ is
-\begin{align}
-     &\bar{x} = \frac{\sum(f_i\times x_i)}{\sum(f_i)} \label{eq:eq1} \\
-     \implies &\bar{x} = \frac{305000}{60} \label{eq:eq2} \\
-     \implies &\bar{x} = 5083.33 \label{eq:eq3} 
-\end{align}
-Therefore, the mean of salaries is Rs.5083.33/- .
+    Here, \\
+    x = salary vector,\\
+    f = frequency vector associated with x,\\ \\
+    From given data,
+    \begin{align}
+        \vec{x} &= \myvec{3000 & 4000 & 5000 & 6000 & 7000 & 8000 & 9000 & 10000}^{\top} \\
+        \vec{f} &= \myvec{16 & 12 & 10 & 8 & 6 & 4 & 3 & 1}^{\top}
+    \end{align}
+    So, the mean $\bar{x}$ is
+    \begin{align}
+        &\bar{x} = \frac{\vec{f}^{\top} \vec{x}}{\vec{f}^{\top} \myvec{1 & 1 & 1 & 1 & 1 & 1 & 1 & 1}^{\top}} \label{eq:eq1} \\
+        \implies &\bar{x} = \frac{\left(48000 + 48000 + 50000 + 48000 + 42000 + 32000 + 27000 + 10000\right)}{\left(16 + 12 + 10 + 8 + 6 + 4 + 3 + 1\right)} \\
+        \implies &\bar{x} = \frac{305000}{60} \label{eq:eq2} \\
+        \implies &\bar{x} = 5083.33 \label{eq:eq3} 
+    \end{align}
+    Therefore, the mean of salaries is Rs.5083.33/- .
 \end{document}
