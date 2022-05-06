@@ -172,11 +172,11 @@ columns=fullflexible
     From given data,
     \begin{align}
         \vec{x} &= \myvec{3000 & 4000 & 5000 & 6000 & 7000 & 8000 & 9000 & 10000}^{\top} \\
-        \vec{f} &= \myvec{16 & 12 & 10 & 8 & 6 & 4 & 3 & 1}^{\top}
+        \vec{f}^{\top} &= \myvec{16 & 12 & 10 & 8 & 6 & 4 & 3 & 1}
     \end{align}
     So, the mean $\bar{x}$ is
     \begin{align}
-        &\bar{x} = \frac{\vec{f}^{\top} \vec{x}}{\vec{f}^{\top} \myvec{1 & 1 & 1 & 1 & 1 & 1 & 1 & 1}^{\top}} \label{eq:eq1} \\
+        &\bar{x} = \frac{\vec{f}^{\top} \vec{x}}{\vec{f}^{\top} \myvec{1 & 1 & 1 & 1 & 1 & 1 & 1 & 1}} \label{eq:eq1} \\
         \implies &\bar{x} = \frac{\left(48000 + 48000 + 50000 + 48000 + 42000 + 32000 + 27000 + 10000\right)}{\left(16 + 12 + 10 + 8 + 6 + 4 + 3 + 1\right)} \\
         \implies &\bar{x} = \frac{305000}{60} \label{eq:eq2} \\
         \implies &\bar{x} = 5083.33 \label{eq:eq3} 
