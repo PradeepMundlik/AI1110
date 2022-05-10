@@ -164,55 +164,73 @@ columns=fullflexible
     what is the conditional probability that both are girls given that (i) the youngest is a girl, (ii) at least one is a girl?   
     
 \section{Answer-}
-    Let $b$ stands for boy and $g$ stands for girl. 
-    The sample space of the experiment is \\ S = $\{ bb, bg, gb, gg\}$ \\
-    (`$bg$' denotes youngest is boy and older is girl. Similar for others.) \\
+    Let us consider random variables X and Y.  \\
+    X is for boys.\\
+    Y is for girls. \\
+    For random variable X,Y 0,1 are possible values. \\
+    X = 0 $\implies$ youngest is boy \\
+    X = 1 $\implies$ eldest is boy \\
+    Similarly, \\
+    Y = 0 $\implies$ youngest is girl \\
+    Y = 1 $\implies$ eldest is girl \\
+    So, (as each born child is equally likely to be a boy or girl) \\
+    \begin{align}
+        P_X(0) = P_X(1) = P_Y(0) = P_Y(1) = \frac{1}{2} 
+        % P_X(1) = \frac{1}{2} \\
+        % P_Y(0) = \frac{1}{2} \\
+        % P_Y(1) = \frac{1}{2} 
+    \end{align}
     Let A denote an event,\\
-    A: `both are girls' \\
-    Then A = $\{ gg \}$
-    \begin{enumerate}[label=\arabic*.,ref=\theenumi]
+    A: `Both are girls' \\
+    Then, \\
+    \begin{align}
+        &A = (Y=0) \cap (Y=1) \\
+        \implies &P(A) = P_Y(0)\times P_Y(1) \\
+        \implies &P(A) = \frac{1}{4}
+    \end{align}
+    \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
         \numberwithin{equation}{enumi}
         \numberwithin{figure}{enumi}
         \numberwithin{table}{enumi}
     \item Part (i) - \\
           Let B denote following event: \\
-          B: `youngest is girl' \\
-          Then B = $\{ gb, gg\}$ \\
+          B: `Youngest is girl' \\
+          Then, \\
+          \begin{align}
+              &P(B) = P_Y(0) \\
+              \implies &P(B) = \frac{1}{2}
+          \end{align}
           Now, 
           \begin{align}
-            &A\cap B  = \{ gg\} \\
-            \implies &n\left(A\cap B\right) = 1 
-        \end{align}
-        Also,
-          \begin{align}
-             n\left(B\right) = 2 
+            &P(A|B)\times P(B) = P(B|A)\times P(A)  \\
+            &P(B|A) = 1 \\
+            \implies &P(A|B)\times \frac{1}{2} = 1\times \frac{1}{4} \\
+            \implies &P(A|B) = \frac{1}{2} \\
+            \implies &P(A|B) = 0.5
           \end{align}
         Therefore,  
-            the conditional probability of A given that B occured is
-        \begin{align}
-            &P\left(A|B\right) = \frac{n\left(A\cap B\right)}{n\left(B\right)} \\
-            \implies &P\left(A|B\right) = \frac{1}{2} \\
-            \implies &P\left(A|B\right) = 0.5
-        \end{align} 
+            the conditional probability of A given that B occured is 0.5. \\
+        
     \item Part (ii) - \\
           Let C denote following event: \\
-          C: `atleast one is girl' \\
-          Then C = $\{ bg, gb, gg\}$ \\
+          C: `Atleast one is girl' \\
+          Then, \\
+          \begin{equation}
+            P(C) = P_Y(0)\times P_Y(1) + P_Y(0)\times P_X(1) + P_X(0)\times P_Y(1) \\
+        \end{equation}
+          \begin{align}
+              \implies &P(C) = \frac{1}{2}\times \frac{1}{2} + \frac{1}{2}\times \frac{1}{2} + \frac{1}{2}\times \frac{1}{2} \\
+              \implies &P(C) = \frac{3}{4}
+          \end{align}
           Now, 
           \begin{align}
-            &A\cap C  = \{ gg\} \\
-            \implies &n\left(A\cap C\right) = 1 
-        \end{align}
-        Also,
-          \begin{align}
-             n\left(C\right) = 3 
+            &P(A|C)\times P(C) = P(C|A)\times P(A)  \\
+            &P(C|A) = 1 \\ 
+            \implies &P(A|C)\times \frac{3}{4} = 1\times \frac{1}{4} \\
+            \implies &P(A|C) = \frac{1}{3} \\
+            \implies &P(A|C) = 0.33
           \end{align}
         Therefore,  
-            the conditional probability of A given that C occured is
-        \begin{align}
-            &P\left(A|C\right) = \frac{n\left(A\cap C\right)}{n\left(C\right)} \\
-            \implies &P\left(A|C\right) = \frac{1}{3} \\
-            \implies &P\left(A|C\right) = 0.33
-        \end{align} 
+            the conditional probability of A given that C occured is 0.33. \\
     \end{enumerate}
 \end{document}
