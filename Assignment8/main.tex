@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 8} 
+\author{Pradeep Mundlik (AI21BTECH11022)}
+\date{\today}
+% \logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+% \logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}{Papoulis 5.44}
+        The random variable x has zero mean, central moments $\mu_n$, and cumulants $\lambda_n$. Show that $\lambda_3 = \mu_3$, $\lambda_4$ = $\mu_4 - 3{\mu_2}^2$.
+    \end{block}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+    If $\eta = 0$, then $m_n = \mu_n$ \\
+    \begin{align}
+        &\lambda_1 = \eta = 0 \\
+        &\phi(s) = \sum_{n = 0}^{\infty}  \frac{\mu_n}{n!} s^n \\
+        &\psi(s) = \sum_{n = 2}^{\infty} \frac{\lambda_n}{n!} s^n \\
+        &1 + \frac{\mu_2}{2!}s^2 + \frac{\mu_3}{3!}s^3 + \dots = exp\left(\frac{\lambda_2}{2!} s^2 + \frac{\lambda_3}{3!}s^3 + \dots\right)
+    \end{align}
+\end{frame}
+\begin{frame}{Solution}
+    Expanding the exponential and equating powers of s, we obtain
+    \begin{align}
+        &\mu_2 = \lambda_2 \\
+        &\mu_3 = \lambda_3 \\
+        &\frac{\mu_4}{4!} = \frac{\lambda_4}{4!} + \frac{1}{2!}\left(\frac{\lambda_2}{2!}\right)^2 \\
+        \implies &\lambda_4 = \mu_4 - 3{\lambda_2}^2 \\
+        \implies &\lambda_4 = \mu_4 - 3{\mu_2}^2 
+    \end{align}
+\end{frame}
+
+
+\end{document}
