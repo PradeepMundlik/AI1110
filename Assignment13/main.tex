@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 13} 
+\author{Pradeep Mundlik (AI21BTECH11022)}
+\date{\today}
+% \logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+% \logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+    % \begin{block}{Papoulis 10.22}
+        We are given the data x(t) = f(t) + n(t), where $R_n(\tau) = N\delta(\tau)$ and E[(t) = 0]. We wish to estimate the integral 
+        \begin{align}
+            g(t) = \int_{0}^{t} f(\alpha) \,d\alpha 
+        \end{align}
+        knowing that g(T) = 0. Show that if we use as the estimate of g(t) the process w(t) = z(t) - z(T)t/T, where 
+        \begin{align}
+            z(t) = \int_{0}^{t} x(\alpha) \,d\alpha
+        \end{align}
+        then 
+        \begin{align}
+            E[w(t)] = g(t) \\
+            \sigma_w ^2 = Nt\left(1 - \frac{t}{T}\right)
+        \end{align}
+    % \end{block} 
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+        \begin{align}
+            &E[z(t)] = g(t) \\
+            &E[w(t)] = g(t) - g(T)t/T  \\
+            &w(t) = \left(1 - \frac{t}{T}\right)\int_{0}^{t} x(\alpha) \,d\alpha - \frac{t}{T}\int_{t}^{T} x(\alpha) \,d\alpha
+        \end{align}
+        The above two integrals are uncorrelated because n(t) is white noise. 
+\end{frame}
+\begin{frame}
+    Hence, 
+    \begin{align}
+        \sigma_w ^2 &= \left(1 - \frac{t}{T}\right)^2 Nt + \frac{t^2}{T^2} N(T - t) \\
+         &= Nt\left(1 - \frac{t}{T}\right)
+    \end{align}
+    NOTE: The above shows that the information that g(T) = 0 can be used to improve the estimate of g(t). Indeed, if use w(t) instead of z(t) for the estimate of g(t) in terms of the data x(t), the variance is reduced from $Nt$ to $Nt\left(1 - \frac{t}{T}\right)$.
+\end{frame}
+\end{document}
