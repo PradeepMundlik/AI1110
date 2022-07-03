@@ -1,19 +1,33 @@
-% Copyright (C) 2020 Saurabh Joshi
-%% 
-\let\negmedspace\undefined
-\let\negthickspace\undefined
-
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%\documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
 \usepackage{setspace}
 \usepackage{gensymb}
+\usepackage{caption}
+%\usepackage{multirow}
+%\usepackage{multicolumn}
+%\usepackage{subcaption}
 %\doublespacing
 \singlespacing
+\usepackage{csvsimple}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{newfloat}
+%\usepackage{syntax}
+\usepackage{listings}
+%\usepackage{iithtlc}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+
+
 %\usepackage{graphicx}
 %\usepackage{amssymb}
 %\usepackage{relsize}
-\usepackage[cmex10]{amsmath}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{mathtools}
 %\usepackage{amsthm}
 %\interdisplaylinepenalty=2500
 %\savesymbol{iint}
@@ -26,7 +40,11 @@
 \usepackage{stfloats}
 \usepackage{cite}
 \usepackage{cases}
-\usepackage{subfig}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
 %\usepackage{xtab}
 \usepackage{longtable}
 \usepackage{multirow}
@@ -34,16 +52,10 @@
 %\usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{mathtools}
-\usepackage{tikz}
-\usepackage{circuitikz}
-\usepackage{verbatim}
 \usepackage{hyperref}
-\usepackage{chngcntr}
-% \counterwithout{figure}{section}
-%\usepackage{stmaryrd}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
+%\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                 %%
     \usepackage{color}                                            %%
     \usepackage{array}                                            %%
     \usepackage{longtable}                                        %%
@@ -53,42 +65,14 @@
     \usepackage{ifthen}                                           %%
   %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
-\usepackage{multicol}
-\usepackage{chngcntr}
-\usepackage{iftex}
-%\usepackage[latin9]{inputenc}
-\usepackage{geometry}
-\usepackage{bm}
-%\geometry{verbose,tmargin=2cm,bmargin=3cm,lmargin=1.8cm,rmargin=1.5cm,headheight=2cm,headsep=2cm,footskip=3cm}
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-% \usepackage{graphicx}
-%\usepackage{setspace}
-%\usepackage{parskip}
-
-\def \hsp {\hspace{3mm}}
-
-\makeatletter
-
-\providecommand{\tabularnewline}{\\}
 
 
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
 
-\makeatother
-\ifxetex
-\usepackage[T1]{fontenc}
-\usepackage{fontspec}
-%\setmainfont[ Path = fonts/]{Sanskrit_2003.ttf}
-\newfontfamily\nakulafont[Script=Devanagari,AutoFakeBold=2,Path = fonts/]{Nakula}
-%\newfontfamily\liberationfont{Liberation Sans Narrow}
-%\newfontfamily\liberationsansfont{Liberation Sans}
-\fi
-\usepackage{tikz}
-\usepackage{xcolor}
-%\usepackage{enumerate}
+
+%\usepackage{stmaryrd}
+
 
 %\usepackage{wasysym}
 %\newcounter{MYtempeqncnt}
@@ -97,44 +81,70 @@
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-\renewcommand\thefigure{\arabic{\thesection}}
+
 \renewcommand\thesectiondis{\arabic{section}}
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
+
+%\lstset{
+%language=C,
+%frame=single, 
+%breaklines=true
+%}
+
+%\lstset{
+	%%basicstyle=\small\ttfamily\bfseries,
+	%%numberstyle=\small\ttfamily,
+	%language=Octave,
+	%backgroundcolor=\color{white},
+	%%frame=single,
+	%%keywordstyle=\bfseries,
+	%%breaklines=true,
+	%%showstringspaces=false,
+	%%xleftmargin=-10mm,
+	%%aboveskip=-1mm,
+	%%belowskip=0mm
+%}
+
+%\surroundwithmdframed[width=\columnwidth]{lstlisting}
 \def\inputGnumericTable{}                                 %%
-
 \lstset{
-language=tex,
+%language=C,
 frame=single, 
-breaklines=true
+breaklines=true,
+columns=fullflexible
 }
+ 
 
-%\begin{document}
+\begin{document}
 %
+\tikzstyle{block} = [rectangle, draw,
+    text width=3em, text centered, minimum height=3em]
+\tikzstyle{sum} = [draw, circle, node distance=3cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
 
-
+\theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
+\newtheorem{definition}{Definition}[section]
 %\newtheorem{algorithm}{Algorithm}[section]
 %\newtheorem{cor}{Corollary}
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
-
 \bibliographystyle{IEEEtran}
 %\bibliographystyle{ieeetr}
-
-
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -152,54 +162,110 @@ breaklines=true
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
 \providecommand{\abs}[1]{\left\vert#1\right\vert}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
-%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
-%\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
-\providecommand{\system}[1]{\overset{\mathcal{#1}}{ \longleftrightarrow}}
-\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
-%
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
-\newcommand{\cosec}{\,\text{cosec}\,}
-\newcommand{\sinc}{\,\text{sinc}\,}
-\newcommand{\rect}{\,\text{rect}\,}
-\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
-\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
-\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 %\numberwithin{equation}{section}
-\numberwithin{equation}{section}
-%\numberwithin{problem}{section}
-%\numberwithin{definition}{section}
+%\numberwithin{problem}{subsection}
+%\numberwithin{definition}{subsection}
 \makeatletter
-\@addtoreset{figure}{problem}
+\@addtoreset{figure}{section}
 \makeatother
-
 \let\StandardTheFigure\thefigure
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\thesection}
+%\numberwithin{figure}{subsection}
+%\numberwithin{equation}{subsection}
+%\numberwithin{equation}{section}
+%\numberwithin{equation}{problem}
+%\numberwithin{problem}{subsection}
+\numberwithin{problem}{section}
+%%\numberwithin{definition}{subsection}
+%\makeatletter
+%\@addtoreset{figure}{problem}
+%\makeatother
+\makeatletter
+\@addtoreset{table}{section}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\StandardTheTable\thetable
 \let\vec\mathbf
-\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
-\renewcommand{\thefigure}{\theproblem}
-%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
-%\counterwithin{equation}{enumi}
-
-
-%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
-
+\numberwithin{equation}{section}
 \vspace{3cm}
-
-%\usepackage{babel}
-\begin{document}
-\author{Pradeep Mundlik}% <-this % stops a space
+% \title{%Convex Optimization in Python
+% 	\logo{
+% 	Random Numbers
+% 	}
+% }
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+\author{ Pradeep Mundlik% <-this % stops a space
+% <-this % stops a space
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
+}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+% make the title area
 \title{Assignment}
 \maketitle
 \tableofcontents
-\bigskip
+% \bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%%
 
 \section{Uniform Random Numbers}
 Let $U$ be a uniform random variable between 0 and 1.
@@ -209,7 +275,10 @@ Let $U$ be a uniform random variable between 0 and 1.
 \\
 \solution Download the following files and execute the  C program.
 \begin{lstlisting}
-	link of exrand.c and coeffs.h
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/1/exrand.c 
+\end{lstlisting}
+\begin{lstlisting}
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/coeffs.h
 \end{lstlisting}
 
 %
@@ -221,7 +290,7 @@ F_{U}(x) = \pr{U \le x}
 \\
 \solution  The following code plots Fig. \ref{fig:uni_cdf}
 \begin{lstlisting}
-	link of cdf_ploy.py
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/1/cdf_plot.py
 \end{lstlisting}
 \begin{figure}[h]
 \centering
@@ -270,7 +339,7 @@ Write a C program to  find the mean and variance of $U$. \\
 \solution
 Code file can be found here:
 \begin{lstlisting}
-	link of c file.
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/1/q1_4.c
 \end{lstlisting}
 Mean=0.500007 \\
 Variance=0.083301
@@ -323,7 +392,7 @@ using a C program, where $U_i, i = 1,2,\dots, 12$ are  a set of independent unif
 and save in a file called gau.dat \\
 \solution 
 \begin{lstlisting}
-	link of c file
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/2/q2_1.c
 \end{lstlisting}
 %
 \item
@@ -331,7 +400,7 @@ Load gau.dat in python and plot the empirical CDF of $X$ using the samples in ga
 \\
 \solution The CDF of $X$ is plotted in Fig. \ref{fig:gauss_cdf} \\
 \begin{lstlisting}
-	link of cdf_plot.py file
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/2/cdf_plot.py
 \end{lstlisting}
 \begin{figure}[h]
 \centering
@@ -354,7 +423,7 @@ What properties does the PDF have?
 \\
 \solution The PDF of $X$ is plotted in Fig. \ref{fig:gauss_pdf} using the code below
 \begin{lstlisting}
-	link of pdf_plot.py
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/2/pdf_plot.py
 \end{lstlisting}
 Proprties of PDF of X:
 \begin{itemize}
@@ -374,7 +443,7 @@ Proprties of PDF of X:
  Variance = 0.999560 \\
  c code file can be found at below link:
 \begin{lstlisting}
-	link of c file
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/2/q2_4.c
 \end{lstlisting}
 \item Given that 
 \begin{align}
@@ -436,7 +505,10 @@ and plot its CDF. \\
 \solution 
 Code for plot can be found at below link:
 \begin{lstlisting}
-	link of file
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/3/q3_1.py
+\end{lstlisting}
+\begin{lstlisting}
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/3/q3_1.dat
 \end{lstlisting}
 \begin{figure}[h]
 	\centering
@@ -469,11 +541,14 @@ Code for plot can be found at below link:
 	\begin{align}
 		T = U_1+U_2
 	\end{align}
-	\solution 
-	T.dat and code files can be found here:
-	\begin{lstlisting}
-		link of file
-	\end{lstlisting}
+\solution 
+T.dat and code files can be found here:
+\begin{lstlisting}
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/4/T.py
+\end{lstlisting}
+\begin{lstlisting}
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/4/T.dat
+\end{lstlisting}
 \item Find the CDF of $T$. \\
 \solution
 
@@ -498,7 +573,7 @@ from fig \ref*{fig:q4_2}
 \end{figure}
 Code for plot can be found at below link:
 \begin{lstlisting}
-	link for plot code 
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/4/q4_2.py
 \end{lstlisting}
 \begin{align}
 	P(U_1+U_2 <t) &= \frac{\Delta EOF}{\Delta AEOD}\\
@@ -553,21 +628,24 @@ for $1 \leq t \leq 2$,
 \solution 
 Code files for plots can be found at:
 \begin{lstlisting}
-	link for pdf and cdf plots
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/4/T_pdf.py
+\end{lstlisting}
+\begin{lstlisting}
+	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/4/T_cdf.py
 \end{lstlisting}
 PDF of T: fig \ref*{fig:T_pdf} \\
 CDF of T: fig \ref*{fig:T_cdf}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{figs/4/T_pdf.pdf}
-	 \caption{PDF of T}
+	\caption{PDF of T}
 	\label{fig:T_pdf}
 \end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\columnwidth]{figs/4/T_cdf.pdf}
-	 \caption{CDF of T}
-	\label{fig:T_cdf}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=\columnwidth]{figs/4/T_cdf.pdf}
+		\caption{CDF of T}
+		\label{fig:T_cdf}
 \end{figure}
 \end{enumerate}
 % \section{Maximul Likelihood}
