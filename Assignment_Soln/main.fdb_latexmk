@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1656865409 "/home/pradeep/Documents/IITH Academics/AI1110/Assignment_Soln/main.tex" "main.pdf" "main" 1656865409
+["pdflatex"] 1656917052 "/home/pradeep/Documents/IITH Academics/AI1110/Assignment_Soln/main.tex" "main.pdf" "main" 1656917053
   "/etc/texmf/web2c/texmf.cnf" 1656053308 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/pradeep/Documents/IITH Academics/AI1110/Assignment_Soln/main.tex" 1656865408 22861 48d685ce19335412c89b742f04b4ea3f ""
+  "/home/pradeep/Documents/IITH Academics/AI1110/Assignment_Soln/main.tex" 1656917052 22861 57ed6ac443957cc83a48f78930df9851 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -220,17 +220,17 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1656692476 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1656692504 2798562 986531b10f67a033c3f0c8be4c042707 ""
-  "figs/1/uni_cdf.eps" 1656747285 15695 f2627d2c00b8329e2f6cb406e09d518f ""
+  "figs/1/uni_cdf.pdf" 1656916993 14528 bbab729a2a715904ad4cb14f443fe960 ""
   "figs/2/gau_cdf.pdf" 1656778197 14369 1380be204d2baf40205d8c304621b952 ""
   "figs/2/gauss_pdf.pdf" 1656760684 15107 8ae92c522e7d50a1a1f3ca7009049335 ""
   "figs/3/q3_1.pdf" 1656764084 15018 00c6e6249b0a63a852f80571c9fe7b74 ""
   "figs/4/T_cdf.pdf" 1656783537 13825 3f59cc0a26619529e6fe2a01ad53ede4 ""
   "figs/4/T_pdf.pdf" 1656783744 14641 58ab71b0067eb51aeb5788c1f692eb9f ""
   "figs/4/q4_2.pdf" 1656782680 12285 cf70cc1508105024430d3beb1ea8b952 ""
-  "main.aux" 1656865409 2750 35188d8fe4f8ca1aab8c4780ed84c9aa "pdflatex"
-  "main.out" 1656865409 631 2f6c063c87f16a150f0c2ef3330d3c5a "pdflatex"
-  "main.tex" 1656865408 22861 48d685ce19335412c89b742f04b4ea3f ""
-  "main.toc" 1656865409 311 a70f5b34400cfe64b1f365da56e65aaa "pdflatex"
+  "main.aux" 1656917053 2750 35188d8fe4f8ca1aab8c4780ed84c9aa "pdflatex"
+  "main.out" 1656917053 631 2f6c063c87f16a150f0c2ef3330d3c5a "pdflatex"
+  "main.tex" 1656917052 22861 57ed6ac443957cc83a48f78930df9851 ""
+  "main.toc" 1656917053 311 a70f5b34400cfe64b1f365da56e65aaa "pdflatex"
   (generated)
   "main.aux"
   "main.log"
