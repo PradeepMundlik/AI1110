@@ -11,6 +11,7 @@ double **transpose(double **a,  int m, int n);
 void uniform(char *str, int len);
 void gaussian(char *str, int len);
 double mean(char *str);
+void triangular(char *str);
 //End function declaration
 
 
@@ -266,6 +267,25 @@ temp-=6;
 fprintf(fp,"%lf\n",temp);
 }
 fclose(fp);
-
+return;
 }
 //End function for generating Gaussian random numbers
+
+void triangular(char *str)
+{
+  FILE *fp;
+  fp = fopen(str,"w");
+
+  double U1, U2, t;
+  int i = 0;
+  while (i<1000000)
+  {
+     U1 = (double)rand()/RAND_MAX;
+     U2 = (double)rand()/RAND_MAX;
+     t = U1+U2;
+     fprintf(fp,"%lf\n",t);
+     i++;
+  }
+  fclose(fp);
+  return;
+}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.7.1)  4 JUL 2022 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.7.1)  8 JUL 2022 11:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1097,6 +1097,9 @@ File: figs/3/q3_1.pdf Graphic file (type pdf)
 <use figs/3/q3_1.pdf>
 Package pdftex.def Info: figs/3/q3_1.pdf  used on input line 515.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
+
+Underfull \vbox (badness 3482) has occurred while \output is active []
+
 <figs/4/q4_2.pdf, id=244, 462.52798pt x 346.89601pt>
 File: figs/4/q4_2.pdf Graphic file (type pdf)
 <use figs/4/q4_2.pdf>
@@ -1109,12 +1112,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [4 <./figs/3/q3_1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<figs/4/T_pdf.pdf, id=325, 462.52798pt x 346.89601pt>
+<figs/4/T_pdf.pdf, id=324, 462.52798pt x 346.89601pt>
 File: figs/4/T_pdf.pdf Graphic file (type pdf)
 <use figs/4/T_pdf.pdf>
 Package pdftex.def Info: figs/4/T_pdf.pdf  used on input line 640.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
-<figs/4/T_cdf.pdf, id=326, 462.52798pt x 346.89601pt>
+<figs/4/T_cdf.pdf, id=325, 462.52798pt x 346.89601pt>
 File: figs/4/T_cdf.pdf Graphic file (type pdf)
 <use figs/4/T_cdf.pdf>
 Package pdftex.def Info: figs/4/T_cdf.pdf  used on input line 646.
@@ -1130,18 +1133,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2F6C063C87F16A150F0C2EF3330D3C5A;631.
  ) 
 Here is how much of TeX's memory you used:
- 29838 strings out of 478287
- 572502 string characters out of 5849290
- 924014 words of memory out of 5000000
+ 29837 strings out of 478287
+ 572486 string characters out of 5849290
+ 914014 words of memory out of 5000000
  47344 multiletter control sequences out of 15000+600000
  528343 words of font info for 145 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  79i,14n,89p,479b,1169s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 150698 bytes).
+Output written on main.pdf (6 pages, 150627 bytes).
 PDF statistics:
- 535 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 144 named destinations out of 1000 (max. 500000)
+ 534 PDF objects out of 1000 (max. 8388607)
+ 298 compressed objects within 3 object streams
+ 143 named destinations out of 1000 (max. 500000)
  80 words of extra memory for PDF output out of 10000 (max. 10000000)
 

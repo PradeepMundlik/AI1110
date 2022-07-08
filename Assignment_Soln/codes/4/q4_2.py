@@ -1,4 +1,3 @@
-from cProfile import label
 import matplotlib.pyplot as plt
 import numpy as np
 x=np.linspace(0,1,20)
@@ -7,8 +6,8 @@ y2 = 1-x
 y3=1.5-x
 x=np.linspace(0,1,20)
 y=np.array([1]*20)
-plt.plot(x,y2,color="tab:orange",label="U1+U2=t, for t<1")
-plt.plot(x,y1,color="aqua",label="U1+U2=1")
+plt.plot(x,y2,color="tab:orange",label="U1+U2=1")
+plt.plot(x,y1,color="aqua",label="U1+U2=t, for t<1")
 plt.plot(x,y3,color="darkorchid",label="U1+U2=t, for t>1")
 plt.plot(x,y,color="r")
 plt.plot(y,x,color='r')

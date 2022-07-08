@@ -29,20 +29,15 @@ for i in range(0,maxrange):
 # 	test = (err[i+1]-err[i])/(x[i+1]-x[i])
 # 	pdf.append(test) #storing the pdf values in a list
 
-def Q(x):
-	if(x<=0):
-		x=0
-	elif(x>1):
-		x=1
-	return 1-x
+
 
 def uni_cdf(x):
-	return 1-Q(x)
-	#if(x<=0):
-	#		x=0
-	#elif(x>1):
-	#	x=1
-	#return x
+	
+	if(x<=0):
+			x=0
+	elif(x>1):
+		x=1
+	return x
     
 Y = []
 for i in range(len(x)):

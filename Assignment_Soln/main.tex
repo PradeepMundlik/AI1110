@@ -479,6 +479,9 @@ from (2.15),
 	 = -x\exp\brak{-\frac{x^2}{2}} - \int -\exp\brak{-\frac{x^2}{2}} \,dx \\
 	 = -x\exp\brak{-\frac{x^2}{2}} + \int \exp\brak{-\frac{x^2}{2}} \,dx 
 \end{align}
+\begin{align}
+\left(x\exp\brak{-\frac{x^2}{2}}\right)_{-\infty} ^{\infty} = 0
+\end{align}
 Substituting limits in (2.13),
 \begin{align}
 	&E[x^2] = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \exp\brak{-\frac{x^2}{2}} \\
@@ -506,9 +509,6 @@ and plot its CDF. \\
 Code for plot can be found at below link:
 \begin{lstlisting}
 	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/3/q3_1.py
-\end{lstlisting}
-\begin{lstlisting}
-	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/3/q3_1.dat
 \end{lstlisting}
 \begin{figure}[h]
 	\centering
@@ -633,8 +633,8 @@ Code files for plots can be found at:
 \begin{lstlisting}
 	https://github.com/PradeepMundlik/AI1110/blob/master/Assignment_Soln/codes/4/T_cdf.py
 \end{lstlisting}
-PDF of T: fig \ref*{fig:T_pdf} \\
-CDF of T: fig \ref*{fig:T_cdf}
+%PDF of T: fig \ref*{fig:T_pdf} \\
+%CDF of T: fig \ref*{fig:T_cdf}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{figs/4/T_pdf.pdf}
@@ -642,7 +642,7 @@ CDF of T: fig \ref*{fig:T_cdf}
 	\label{fig:T_pdf}
 \end{figure}
 	\begin{figure}[h]
-		\centering
+		
 		\includegraphics[width=\columnwidth]{figs/4/T_cdf.pdf}
 		\caption{CDF of T}
 		\label{fig:T_cdf}
